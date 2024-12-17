@@ -1,4 +1,4 @@
-# 📊 Stáhla jsem si data z Kaggle  
+# 📊 Mini projekt 
 [🔗 Kaggle Dataset - edX Course Study](https://www.kaggle.com/datasets/edx/course-study)
 
 ## Jaká to jsou data? 🧐  
