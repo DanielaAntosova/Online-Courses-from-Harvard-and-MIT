@@ -13,8 +13,9 @@ Tato zpráva shrnuje:
 - **4,5 milionu účastníků** 👨‍🎓👩‍🎓  
 - **28 milionů hodin** strávených na platformě edX ⏱️  
 
-**Závěr:** Data zachycují globální komunitu studentů a jejich zapojení do online vzdělávání prostřednictvím platformy edX od jejího spuštění. 🌍  
+Data zachycují globální komunitu studentů a jejich zapojení do online vzdělávání prostřednictvím platformy edX od jejího spuštění. 🌍  
 
+## 🧹 Čištění dat pro Tableau
 ---
 ```python
 # Import knihovny
@@ -32,5 +33,5 @@ kurzy.columns = kurzy.columns.str.replace(' ', '_')
 # Výpis sloupců pro kontrolu
 print(kurzy.columns)
 
-#Uložení vyčištěného souboru
+# Uložení vyčištěného souboru
 kurzy.to_csv("kurzy_cleaned.csv", index=False)
