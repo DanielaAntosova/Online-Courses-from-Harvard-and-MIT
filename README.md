@@ -16,3 +16,21 @@ Tato zpráva shrnuje:
 **Závěr:** Data zachycují globální komunitu studentů a jejich zapojení do online vzdělávání prostřednictvím platformy edX od jejího spuštění. 🌍  
 
 ---
+```python
+# Import knihovny
+import pandas as pd
+
+# Načtení dat ze souboru
+kurzy = pd.read_csv("appendix.csv")
+
+# Zobrazení informací o datasetu
+kurzy.info()
+
+# Převod názvů sloupců: mezery -> podtržítka
+kurzy.columns = kurzy.columns.str.replace(' ', '_')
+
+# Výpis sloupců pro kontrolu
+print(kurzy.columns)
+
+#Uložení vyčištěného souboru
+kurzy.to_csv("kurzy_cleaned.csv", index=False)
