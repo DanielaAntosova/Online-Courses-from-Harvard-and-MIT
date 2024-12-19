@@ -5,9 +5,7 @@
 
 V roce **2012** spustily **Massachusettský technologický institut (MIT)** a **Harvardova univerzita** neziskovou vzdělávací platformu **edX**, která nabízí **otevřené online kurzy**. 🌐  
 
-### Co jsme se dozvěděli o čtyři roky později? 🗓️  
-
-Tato zpráva shrnuje:  
+O čtyři roky později tato zpráva shrnuje:  
 - **290 online kurzů** Harvardu a MIT 🎓  
 - **250 tisíc udělených certifikátů** 🏅  
 - **4,5 milionu účastníků** 👨‍🎓👩‍🎓  
