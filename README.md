@@ -13,6 +13,11 @@ O čtyři roky později tato zpráva shrnuje:
 
 Data zachycují globální komunitu studentů a jejich zapojení do online vzdělávání prostřednictvím platformy edX od jejího spuštění. 🌍  
 
+## Co si na projektu procvičím? 🛠️📚💡
+
+- zpracování dat v **Python** 📊
+- tvorba vizualizace v **Matplolib** 📈
+
 ## 🧹 Čištění dat pro Tableau
 ---
 ```python
@@ -36,7 +41,7 @@ kurzy.to_csv("kurzy_cleaned.csv", index=False)
 ```
 ---
 
-## Jaký je podíl kurzů nabízených institucemi MITx a HarvardX na platformě edX?
+## Jaký je podíl kurzů nabízených institucemi MITx 🎓 a HarvardX 🎓 na platformě edX 🌐?
 ---
 ```python
 import matplotlib.pyplot as plt
