@@ -111,7 +111,7 @@ plt.axis('equal')
 # Zobrazení grafu
 plt.show()
 ```
----
+
 
 ![Graf](https://github.com/DanielaAntosova/Online-Courses-from-Harvard-and-MIT/blob/main/Proportion_of_Courses_Offered_by_Institutions.png "Proportion of Courses Offered by Institutions")
 
