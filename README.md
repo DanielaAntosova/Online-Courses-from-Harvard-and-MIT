@@ -17,6 +17,7 @@ Data zachycují globální komunitu studentů a jejich zapojení do online vzdě
 
 - zpracování dat v **Python** 📊
 - tvorba vizualizace v **Matplolib** 📈
+- git 🖇️💾
 
 ## 🧹 Čištění dat pro Tableau
 ---
