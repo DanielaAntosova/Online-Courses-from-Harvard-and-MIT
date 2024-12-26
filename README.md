@@ -85,8 +85,6 @@ plt.savefig("Proportion_of_Courses_Offered_by_Institutions.png", bbox_inches='ti
 plt.show()
 
 ```
----
-
 ![Graf](https://github.com/DanielaAntosova/Online-Courses-from-Harvard-and-MIT/blob/main/Proportion_of_Courses_Offered_by_Institutions.png "Proportion of Courses Offered by Institutions")
 
 MITx (Massachusettský technologický institut) poskytuje přibližně 55.5 % všech kurzů na edX, zatímco HarvardX má podíl 44.5 %.
