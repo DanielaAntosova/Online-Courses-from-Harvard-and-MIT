@@ -161,3 +161,89 @@ plt.show()
 ---
 
 ![Graf](https://github.com/DanielaAntosova/Online-Courses-from-Harvard-and-MIT/blob/main/top_3_courses.png "Top 3 Courses by Participation")
+
+## Jaké je průměrné zastoupení pohlaví 👩‍🎓👨‍🎓 ve studijních oborech 📖?
+---
+```python
+# Importování potřebných knihoven
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Načtení dat z CSV souboru
+data = pd.read_csv("kurzy_cleaned.csv")
+
+# Výpočet průměrného procenta mužů a žen podle studijních oborů
+gender_distribution = data.groupby('Course_Subject')[['%_Male', '%_Female']].mean().reset_index()
+
+# Příprava seznamu oborů pro vykreslení
+subjects = gender_distribution['Course_Subject']
+
+# Funkce pro zalomení dlouhých názvů oborů do maximálně 3 řádků
+def wrap_text(subject, max_lines=3):
+    words = subject.split(', ')  # Rozdělení názvu podle čárek
+    lines = ['']
+    for word in words:
+        # Pokud délka řádku nepřekročí 20 znaků, přidáme další část na stejný řádek
+        if len(lines[-1] + word) < 20:
+            lines[-1] += (', ' if lines[-1] else '') + word
+        else:
+            # Pokud je řádek příliš dlouhý, vytvoříme nový
+            lines.append(word)
+    return '\n'.join(lines[:max_lines])  # Vrátíme zalomený text jako řetězec
+
+# Zalomení všech názvů oborů
+wrapped_subjects = [wrap_text(subject) for subject in subjects]
+
+# Příprava dat pro boxplot
+male_data = [data[data['Course_Subject'] == subject]['%_Male'].dropna() for subject in subjects]  # Data pro muže
+female_data = [data[data['Course_Subject'] == subject]['%_Female'].dropna() for subject in subjects]  # Data pro ženy
+
+# Vytvoření boxplotu pro zastoupení mužů a žen v jednotlivých studijních oborech
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Boxplot pro data mužů
+bp1 = ax.boxplot(male_data, positions=np.arange(len(subjects)) - 0.2, widths=0.35, patch_artist=True, 
+                 boxprops=dict(facecolor='#5A8DC3', color='black'),  # Modrá barva pro muže
+                 medianprops=dict(color='black'), labels=wrapped_subjects, vert=True)
+
+# Boxplot pro data žen
+bp2 = ax.boxplot(female_data, positions=np.arange(len(subjects)) + 0.2, widths=0.35, patch_artist=True, 
+                 boxprops=dict(facecolor='#F2766B', color='black'),  # Růžová barva pro ženy
+                 medianprops=dict(color='black'), vert=True)
+
+# Nastavení popisků os a nadpisu grafu
+ax.set_ylabel('Average Percentage', fontsize=13, fontweight='bold')  # Popis osy Y
+ax.set_xlabel('Course Subject', fontsize=13, fontweight='bold')  # Popis osy X
+ax.set_title('Average Gender Distribution by Course Subject (Boxplot)', fontsize=24, fontweight='bold', loc='center', pad=20)  # Nadpis grafu
+ax.set_xticks(np.arange(len(subjects)))
+ax.set_xticklabels(wrapped_subjects, fontsize=11, fontweight='normal')  # Zalomené a normální popisky X-ové osy
+
+# Vytvoření vlastní legendy
+legend_elements = [
+    plt.Line2D([0], [0], color='#5A8DC3', lw=4, label='Male'),  # Modrá barva pro muže
+    plt.Line2D([0], [0], color='#F2766B', lw=4, label='Female')  # Růžová barva pro ženy
+]
+legend = ax.legend(handles=legend_elements, fontsize=11, loc='center left', bbox_to_anchor=(1, 0.5))  # Umístění legendy vedle grafu
+for text in legend.get_texts():
+    text.set_fontweight('normal')  # Normální styl textu v legendě
+
+# Nastavení popisků na ose Y
+ax.tick_params(axis='y', labelsize=11, width=1.5)
+for label in ax.get_yticklabels():
+    label.set_fontweight('normal')  # Normální styl pro čísla na ose Y
+
+# Odstranění mřížky z grafu
+ax.grid(False)
+
+# Úprava rozložení pro lepší zarovnání
+plt.tight_layout()
+
+# Uložení grafu jako obrázku ve formátu PNG
+plt.savefig("Average_Gender_Distribution_by_Course_Subject.png", dpi=300, bbox_inches='tight')
+
+# Zobrazení grafu
+plt.show()
+```
+---
+![Graf](https://github.com/DanielaAntosova/Online-Courses-from-Harvard-and-MIT/blob/main/Average_Gender_Distribution_by_Course_Subject.png "Average_Gender_Distribution_by_Course_Subject")
