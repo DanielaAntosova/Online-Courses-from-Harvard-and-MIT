@@ -1,4 +1,4 @@
-# 📊 Mini projekt - ještě na tom pracuji 
+# 📊 Mini projekt
 [🔗 Kaggle Dataset - edX Course Study](https://www.kaggle.com/datasets/edx/course-study)
 
 ## Jaká to jsou data? 🧐  
